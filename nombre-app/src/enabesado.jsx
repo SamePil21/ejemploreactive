@@ -1,8 +1,13 @@
 import miImagen from './assets/logo.jpg';
+import logofaceboock from './assets/faceboock.png';
+import logogoogle from './assets/Google.png';
+import logoinstagram from './assets/Instagram.png';
+import'./styles.css';
+
 
 function Encabezado(){
     return (
-        <div>
+        <div className='encabezadoe'>
             <Logotipo />
             <Menu />
             <Redes />
@@ -11,14 +16,14 @@ function Encabezado(){
 }
 function Logotipo(){
     return (
-        <div>
+        <div className='logotipo'>
             <img src={miImagen} alt='Logotipo' />
         </div>
     )
 }
 function Menu(){
     return (
-        <div>
+        <div className='Menurs'>
             <ul>
                 <li>Inicio</li>
                 <li>Acerca de </li>
@@ -31,13 +36,11 @@ function Menu(){
 }
 function Redes(){
     return(
-        <div>
+        <div className='redesmn'>
             <ul>
-                <li>Facebook</li>
-                <li>Wasap</li>
-                <li>Insta</li>
-                <li>Yutub</li>
-                <li>Linkedin</li>
+                <li><img src={logofaceboock} alt='faceboock' /> </li>
+                 <li><img src={logogoogle} alt='Google' /> </li>
+                  <li><img src={logoinstagram} alt='Instagram' /> </li>
             </ul>
         </div>
     )
