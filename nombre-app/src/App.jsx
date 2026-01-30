@@ -1,12 +1,15 @@
 import Cards from "./cards";
 import Encabezado from "./enabesado";
-import Expresiones from "./expresiones";
+import Futer from "./futer";
+import Boddy from "./boddy";
 
 function App(){
   return(
     <div>
       <Encabezado /> 
       <Cards/>
+            <Boddy/>
+      <Futer/>
     </div>
   )
 
