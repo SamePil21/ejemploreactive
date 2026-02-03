@@ -8,7 +8,7 @@ function App(){
     <div>
       <Encabezado /> 
       <Cards/>
-            <Boddy/>
+      <Boddy name = ''/>
       <Futer/>
     </div>
   )

@@ -1,12 +1,12 @@
+import './futer.css';
 
-import './boddy.css';
-function boddy(){
-    return(
-        <div className="futer">
-            <div>
-            <h1>Miku Epsilon</h1>   
-            </div>
+function Boddy() {
+    return (
+        <div className="footer">
+            <div className="left">Miku Epsilon</div>
+            <div className="right">Miku Epsilon</div>
         </div>
     )
 }
-export default boddy;
+
+export default Boddy;
