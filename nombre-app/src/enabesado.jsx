@@ -3,33 +3,36 @@ import logofaceboock from './assets/faceboock.png';
 import logogoogle from './assets/Google.png';
 import logoinstagram from './assets/Instagram.png';
 import'./styles.css';
+import PropTypes from 'prop-types';
 
 
-function Encabezado(){
+
+function Encabezado({cambiarVista}){
     return (
         <div className='encabezadoe'>
             <Logotipo />
-            <Menu />
+            <Menu cambiarVista={cambiarVista}/>
             <Redes />
         </div>
-    )
+    );
 }
+
 function Logotipo(){
     return (
         <div className='logotipo'>
             <img src={miImagen} alt='Logotipo' />
         </div>
-    )
+    );
 }
-function Menu(){
+function Menu({cambiarVista}){
     return (
         <div className='Menurs'>
             <ul>
-                <li>Inicio</li>
-                <li>Acerca de </li>
-                <li>Producto</li>
-                <li>Contacto</li>
-                <li>Sucursales</li>
+                <li onClick={() => cambiarVista('Inicio')}>Inicio</li>
+                <li onClick={() => cambiarVista('Acercade')}>Acercade </li>
+                <li onClick={() => cambiarVista('Productos')}>Producto</li>
+                <li onClick={() => cambiarVista("Contacto")}>Contacto</li>
+                <li onClick={() => cambiarVista('Sucursal')}>Sucursales</li>
             </ul>
         </div>
     )
@@ -44,6 +47,14 @@ function Redes(){
             </ul>
         </div>
     )
+}
+
+Menu.propTypes = {
+    cambiarVista: PropTypes.func.isRequired
+}
+
+Encabezado.propTypes = {
+    cambiarVista: PropTypes.func.isRequired
 }
 
 export default Encabezado

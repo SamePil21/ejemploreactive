@@ -1,5 +1,3 @@
-import { use } from "react";
-
 function Expresiones(){
     const nombre ='Carlos Samuel';
     const apellidos ='Vargas Diego';

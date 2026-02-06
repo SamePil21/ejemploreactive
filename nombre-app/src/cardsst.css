@@ -1,60 +1,140 @@
-/* Contenedor general */
+/* ================================
+   VARIABLES GLOBALES
+================================ */
+:root {
+    /* Colores base */
+    --color-bg-card: #ffffff;
+    --color-bg-card-alt: #f0f0f0;
+    --color-text-title: #333;
+    --color-shadow-soft: rgba(184, 161, 161, 0.15);
+    --color-shadow-hover: rgba(0, 0, 0, 0.25);
+
+    /* Colores de borde */
+    --border-card-1: #39c6ff;
+    --border-card-2: #f4ff5f;
+    --border-card-3: #93a9ad;
+    --border-card-4: #afe0b1;
+
+    /* Medidas */
+    --card-width: 260px;
+    --card-radius: 20px;
+    --image-radius: 15px;
+    --image-height: 220px;
+
+    /* Espaciados */
+    --gap-cards: 2rem;
+    --padding-card: 1.5rem;
+    --padding-container: 2rem;
+
+    /* Animaciones */
+    --transition-speed: 0.3s;
+}
+
+/* ================================
+   CONTENEDOR GENERAL
+================================ */
 .cardsDiv {
     display: flex;
-    gap: 2rem;
+    gap: var(--gap-cards);
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: var(--padding-container);
     flex-wrap: wrap;
 }
 
-/* Card base */
+/* ================================
+   CARD BASE
+================================ */
 .card {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    width: 260px;
-    border-radius: 20px;
-    padding: 1.5rem;
+    background: linear-gradient(
+        145deg,
+        var(--color-bg-card),
+        var(--color-bg-card-alt)
+    );
+    width: var(--card-width);
+    border-radius: var(--card-radius);
+    padding: var(--padding-card);
     text-align: center;
-    box-shadow: 0 10px 25px rgba(184, 161, 161, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px var(--color-shadow-soft);
+    transition: 
+        transform var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease;
     cursor: pointer;
 }
 
-/* Animación hover */
+/* Hover animado */
 .card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 40px var(--color-shadow-hover);
 }
 
-/* Imagen */
+/* ================================
+   IMAGEN
+================================ */
 .card img {
     width: 100%;
-    height: 220px;
+    height: var(--image-height);
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: var(--image-radius);
     margin-bottom: 1rem;
 }
 
-/* Título */
+/* ================================
+   TEXTO
+================================ */
 .card h1 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #333;
+    color: var(--color-text-title);
+    margin-bottom: 0.5rem;
 }
 
-/* Detalles individuales */
-#card1 {
-    border: 3px solid #39c6ff;
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1rem;
 }
 
-#card2 {
-    border: 3px solid #f4ff5f;
+/* ================================
+   LINKS Y BOTONES
+================================ */
+.card a {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: 600;
 }
 
-#card3 {
-    border: 3px solid #93a9ad;
+.card button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #0077cc;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
 }
 
-#card4 {
-    border: 3px solid #afe0b1;
+.card button:hover {
+    background-color: #005fa3;
+}
+
+/* ================================
+   VARIANTES DE CARD (BORDES)
+================================ */
+.card.card-1 {
+    border: 3px solid var(--border-card-1);
+}
+
+.card.card-2 {
+    border: 3px solid var(--border-card-2);
+}
+
+.card.card-3 {
+    border: 3px solid var(--border-card-3);
+}
+
+.card.card-4 {
+    border: 3px solid var(--border-card-4);
 }

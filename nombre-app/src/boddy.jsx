@@ -1,12 +1,12 @@
 
 import './boddysame.css';
 function boddysame(props) {
-    let user = props
-    console.info(user)
-    if(user.name!=""){
+    let userasd = props
+    console.info(userasd)
+    if(userasd.name!=""){
 
     return (
-
+    <div className="bodyDiv">
         <div className="boddy">
             <div>
                 <h1> Identity V (IDV) es un popular videojuego de terror
@@ -16,10 +16,15 @@ function boddysame(props) {
                       obras de Tim Burton y una profunda historia narrativa. </h1>
             </div>
         </div>
+        </div>
     )
 }
 return(
-    <div><h3>No hay Datos</h3></div>
+    <div className='bodyDiv'>
+            <div className='glassContainer'>
+            <h1>NO HAY NADA </h1>
+            </div>
+            </div>
 )
 }
 export default boddysame;
