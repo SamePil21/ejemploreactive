@@ -8,8 +8,8 @@ function PromosContenedor() {
       <p>Ofertas en todos los productos</p>
 
       <Mapa 
-        lat={20.276630146830644}
-        lng={-97.95846980964982}
+        lat={20.268136}
+        lng={-97.960834}
         nombre="ServiTec Sucursal Centro"
       />
     </div>

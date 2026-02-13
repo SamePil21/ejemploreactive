@@ -1,6 +1,6 @@
 .footer {
-    width: 100%;
-    height: 120px;
+    width: auto;
+    height: 100px;
     background: linear-gradient(135deg, #ddf7e0, #dbdbeb);
     display: flex;
     align-items: center;

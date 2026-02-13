@@ -7,7 +7,7 @@ body {
 
 .encabezadoe {
     background-color: #5d8e8a;
-    padding: 20px 40px;
+    padding: flex;
     display: flex;
     align-items: center;
     justify-content: space-between;

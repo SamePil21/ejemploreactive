@@ -5,7 +5,7 @@ const containerStyle = {
   height: '400px'
 };
 
-function Mapa(lat, lng, nombre) {
+function Mapa({ lat, lng, nombre }) {
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
   });

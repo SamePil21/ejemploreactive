@@ -1,42 +1,4 @@
-/* boddysame.css */
+body{
+    background-color: rgb(163, 186, 187);
 
-/* Fondo general apagado */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    background-color: #f0f0f0; /* fondo neutro y suave */
-    height: 100vh;
-    display: grid;
-    place-items: center; /* centra horizontal y verticalmente */
-}
-
-/* Contenedor principal */
-.boddy {
-    background: #ffffff; /* contenedor brillante */
-    padding: 40px 299px;
-    border-radius: 90px; /* bordes redondeados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* sombra suave */
-    max-width: 800px;
-    text-align: center;
-    border: 1px solid #dddddd; /* borde sutil para formalidad */
-}
-
-/* Estilo del texto */
-.boddy h1 {
-    color: #333333; /* gris oscuro, elegante y legible */
-    font-size: 1.6rem;
-    line-height: 1.6;
-    font-weight: 500;
-}
-
-/* Adaptable a pantallas pequeñas */
-@media (max-width: 600px) {
-    .boddy {
-        padding: 20px;
-    }
-
-    .boddy h1 {
-        font-size: 1.3rem;
-    }
 }

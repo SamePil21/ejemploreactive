@@ -3,6 +3,7 @@ import Encabezado from "./enabesado";
 import Futer from "./futer";
 import Boddy from "./boddy";
 import { useState } from "react";
+import MapaGeoLocalizacion from "./mapalocalizacion";
 
 function App() {
     const [vista, setVista] = useState("Inicio");
@@ -13,6 +14,7 @@ function App() {
             <Cards vista={vista} />
             <Boddy name="" />
             <Futer />
+            <MapaGeoLocalizacion />
         </div>
     );
 }
