@@ -1,16 +1,29 @@
 .footer {
-    width: auto;
-    height: 100px;
-    background: linear-gradient(135deg, #ddf7e0, #dbdbeb);
+       top: 0;
+    z-index: 100; /* Asegura que flote sobre todo lo demás */
+    width: 100%;
+    
+    /* 2. DISEÑO Y ALINEACIÓN  */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* uno a la izquierda, otro a la derecha */
-    padding: 0 50px; /* espacio desde los bordes */
-    color: #156464;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 -4px 10px rgba(162, 193, 197, 0.3);
-}
+    justify-content: space-between;
+    padding: 10px 40px; /* Corregí 'flex' por pixeles reales */
 
+    /* 3. EFECTO CRISTAL */
+    
+    /* Fondo: Tu color verde (#5d8e8a) pero al 40% de opacidad */
+    background-color: rgba(61, 86, 84, 0.4); 
+    
+    /* Desenfoque: Esto hace que lo de atrás se vea borroso */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Para que sirva en iPhone/Safari */
+
+    /* 4. DETALLES DE VIDRIO */
+    /* Borde sutil blanco semi-transparente abajo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Sombra suave */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 .footer .left,
 .footer .right {
     font-size: 1.2rem;

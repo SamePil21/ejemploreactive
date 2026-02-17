@@ -1,36 +1,59 @@
-import {useEffect,useState} from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { useState, useEffect } from "react";
+import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
-function MapaGeoLocalizacion(){ 
-    const[ubicación, setUbicacion] = useState(null);
+const containerStyle = {
+    width: "100%",
+    height: "400px"
+};
 
-    useEffect(()=>{ 
+function MapaGeoLocalizacion() {
+    // 1. Usamos el mismo cargador que en tu otro mapa para evitar conflictos
+    const { isLoaded, loadError } = useJsApiLoader({
+        id: 'google-map-script', // Mismo ID para que React sepa que es la misma API
+        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        version: "weekly"
+    });
+
+    const [ubicacion, setUbicacion] = useState(null);
+
+    // 2. Obtenemos la ubicación del usuario
+    useEffect(() => {
         navigator.geolocation.getCurrentPosition(
-            (position)=>{
+            (position) => {
                 setUbicacion({
-                    lat: position.coords.latitude,  //latitud
-                    lng: position.coords.longitude  //longuitud 
-                })
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                });
             },
-            (error) => console.error(error),
-            {enableHighAccuracy:true}
-        )
-    },[])
-    return(
-        <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-            {setUbicacion && (
+            (error) => {
+                console.error("Error obteniendo ubicación:", error);
+                // Ponemos una ubicación por defecto si falla (opcional)
+            },
+            { enableHighAccuracy: true }
+        );
+    }, []);
+
+    if (loadError) return <div>Error cargando el mapa</div>;
+    if (!isLoaded) return <div>Cargando mapa...</div>;
+
+    return (
+        <div style={{ marginTop: "20px" }}>
+            <h3>Tu Ubicación Actual</h3>
+            
+            {/* 3. Solo mostramos el mapa si ya tenemos la ubicación (lat/lng) */}
+            {ubicacion ? (
                 <GoogleMap
-                mapContainerStyle={{width:"100",height:"300PX"}}
-                center={ubicación}
-                zoom={15}
+                    mapContainerStyle={containerStyle}
+                    center={ubicacion}
+                    zoom={15}
                 >
-                    <Marker position={ubicación}/>
+                    <MarkerF position={ubicacion} />
                 </GoogleMap>
-            )
-            }
-        </LoadScript>
-    )
+            ) : (
+                <p>Buscando tu señal GPS...</p>
+            )}
+        </div>
+    );
 }
 
-export default MapaGeoLocalizacion
-// se usa pra poder saber la ubicación del dispositivo y que solo se jala desde aca para usarlo en cuaquer lgar 
+export default MapaGeoLocalizacion;

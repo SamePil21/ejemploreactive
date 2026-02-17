@@ -1,0 +1,106 @@
+/* --- CONTENEDOR DE CARTAS --- */
+.cardsDiv {
+    /* 1. Diseño y distribución */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 80px 40px 40px 40px; /* Un poco más de padding arriba para que no se pegue al iniciar */
+
+    /* 2. ARREGLO PARA QUE SE VAYA AL FONDO */
+    position: relative; /* Normal, no sticky */
+    z-index: 1; /* Nivel 1 (El encabezado tiene 100, así que el encabezado gana) */
+    
+    /* Fondo suave opcional para el área de cartas */
+    background-color: transparent; 
+}
+
+/* --- ESTILO BASE DE LA TARJETA --- */
+.card {
+    background: #fff;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Sombra suave inicial */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    /* Transición fluida para el efecto rebote */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Aseguramos que el contenido de la carta no se salga */
+    position: relative;
+    z-index: 2; 
+}
+
+/* --- ANIMACIÓN AL PASAR EL MOUSE (HOVER) --- */
+.card:hover {
+    transform: translateY(-15px); /* Se eleva */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra 3D */
+}
+
+/* --- IMAGEN DE LA TARJETA --- */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto Zoom en la imagen al pasar el mouse */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- TEXTOS --- */
+.card h1 {
+    font-size: 1.4rem;
+    margin: 20px 0 10px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* --- BOTÓN "LEER MÁS" --- */
+.card a {
+    text-decoration: none;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* --- BOTÓN OPCIONAL "SALUDAR" --- */
+.card button {
+    margin-bottom: 20px;
+    padding: 8px 20px;
+    border: 2px solid #007bff;
+    background: transparent;
+    color: #007bff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background: #007bff;
+    color: white;
+}

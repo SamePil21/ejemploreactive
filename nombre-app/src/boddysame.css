@@ -1,4 +1,15 @@
-body{
-    background-color: rgb(163, 186, 187);
+body {
+    background-image: url('./assets/Fondohdboniscool.jpg');
 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que los bordes no aumenten el tamaño real */
+}
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Organiza tus elementos en columna */
 }

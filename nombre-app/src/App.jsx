@@ -1,8 +1,8 @@
+import { useState } from "react";
 import Cards from "./cards";
 import Encabezado from "./enabesado";
 import Futer from "./futer";
-import Boddy from "./boddy";
-import { useState } from "react";
+import PromosContenedor from "./boddy";
 import MapaGeoLocalizacion from "./mapalocalizacion";
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
         <div>
             <Encabezado cambiarVista={setVista} />
             <Cards vista={vista} />
-            <Boddy name="" />
-            <Futer />
+            <PromosContenedor />
             <MapaGeoLocalizacion />
+            <Futer />
         </div>
     );
 }

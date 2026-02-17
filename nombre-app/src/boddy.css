@@ -1,4 +1,26 @@
 body{
-    background-color: aliceblue;
+    top: 0;
+    z-index: 100; /* Asegura que flote sobre todo lo demás */
+    width: 100%;
+    
+    /* 2. DISEÑO Y ALINEACIÓN  */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px; /* Corregí 'flex' por pixeles reales */
 
+    /* 3. EFECTO CRISTAL */
+    
+    /* Fondo: Tu color verde (#5d8e8a) pero al 40% de opacidad */
+    background-color: rgba(148, 214, 209, 0.4); 
+    
+    /* Desenfoque: Esto hace que lo de atrás se vea borroso */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Para que sirva en iPhone/Safari */
+
+    /* 4. DETALLES DE VIDRIO */
+    /* Borde sutil blanco semi-transparente abajo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Sombra suave */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

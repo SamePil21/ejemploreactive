@@ -1,4 +1,5 @@
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+import { useMemo } from 'react';
 
 const containerStyle = {
   width: '100%',
@@ -7,20 +8,20 @@ const containerStyle = {
 
 function Mapa({ lat, lng, nombre }) {
   const { isLoaded, loadError } = useJsApiLoader({
+    id: 'google-map-script',
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY
   });
 
+  // Usamos useMemo para que el centro no se recalcule innecesariamente
+  const center = useMemo(() => ({ lat: Number(lat), lng: Number(lng) }), [lat, lng]);
+
   if (loadError) {
-    return <div>Error cargando el mapa</div>;
+    return <div>Error al conectar con Google Maps. Revisa tu API Key en el archivo .env</div>;
   }
 
-  if (!isLoaded) {
-    return <div>Cargando ubicación...</div>;
-  }
-
-  const center = { lat, lng };
-
-  return (
+  // Esta es la parte más importante: 
+  // NO renderizamos nada de GoogleMap hasta que isLoaded sea true
+  return isLoaded ? (
     <div>
       <h3>{nombre}</h3>
       <GoogleMap
@@ -28,9 +29,11 @@ function Mapa({ lat, lng, nombre }) {
         center={center}
         zoom={16}
       >
-        <Marker position={center} />
+        <MarkerF position={center} />
       </GoogleMap>
     </div>
+  ) : (
+    <div>Cargando mapa...</div>
   );
 }
 

@@ -6,15 +6,33 @@ body {
 }
 
 .encabezadoe {
-    background-color: #5d8e8a;
-    padding: flex;
+    /* 1. POSICIONAMIENTO */
+    position: sticky; /* Se queda pegado arriba al bajar */
+    top: 0;
+    z-index: 100; /* Asegura que flote sobre todo lo demás */
+    width: 100%;
+    
+    /* 2. DISEÑO Y ALINEACIÓN  */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Esto hace que sea una barra completa */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+    padding: 10px 40px; /* Corregí 'flex' por pixeles reales */
 
+    /* 3. EFECTO CRISTAL */
+    
+    /* Fondo: Tu color verde (#5d8e8a) pero al 40% de opacidad */
+    background-color: rgba(76, 104, 103, 0.4); 
+    
+    /* Desenfoque: Esto hace que lo de atrás se vea borroso */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Para que sirva en iPhone/Safari */
+
+    /* 4. DETALLES DE VIDRIO */
+    /* Borde sutil blanco semi-transparente abajo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Sombra suave */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 .logotipo img {
     width: 100px;
     height: auto;
