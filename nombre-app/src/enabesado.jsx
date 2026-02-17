@@ -4,6 +4,7 @@ import logogoogle from './assets/Google.png';
 import logoinstagram from './assets/Instagram.png';
 import './styles.css';
 import PropTypes from 'prop-types';
+import Clima from './clima';
 
 function Encabezado({ cambiarVista }) {
     return (
@@ -34,6 +35,7 @@ function Menu({ cambiarVista }) {
                 <li onClick={() => cambiarVista('Contacto')}>Contacto</li>
                 <li onClick={() => cambiarVista('Sucursales')}>Sucursales</li>
             </ul>
+            
         </div>
     )
 }
@@ -46,6 +48,7 @@ function Redes() {
                 <li><img src={logogoogle} alt='Google' /> </li>
                 <li><img src={logoinstagram} alt='Instagram' /> </li>
             </ul>
+            <Clima/>
         </div>
     )
 }

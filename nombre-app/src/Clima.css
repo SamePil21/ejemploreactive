@@ -1,0 +1,41 @@
+/* Clima.css */
+
+.divClima {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  background: linear-gradient(145deg, #637571, #696d72);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.divClima:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.divClima p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.divClima p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.divClima p:last-child {
+  font-style: italic;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Opcional: agregar un icono de clima si quieres */
+.weather-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
