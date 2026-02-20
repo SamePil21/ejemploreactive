@@ -30,35 +30,40 @@ function Menu({ cambiarVista }) {
             <ul>
                 <li onClick={() => cambiarVista('Inicio')}>Inicio</li>
                 <li onClick={() => cambiarVista('AcercaDe')}>Acercade</li>
-                <li onClick={() => cambiarVista('Productos')}>Producto</li>
+                <li onClick={() => cambiarVista('Productos')}>Productos</li>
                 <li onClick={() => cambiarVista('Galeria')}>Galeria</li>
                 <li onClick={() => cambiarVista('Contacto')}>Contacto</li>
                 <li onClick={() => cambiarVista('Sucursales')}>Sucursales</li>
             </ul>
-            
         </div>
-    )
+    );
 }
 
 function Redes() {
     return (
         <div className='redesmn'>
             <ul>
-                <li><img src={logofaceboock} alt='faceboock' /> </li>
-                <li><img src={logogoogle} alt='Google' /> </li>
-                <li><img src={logoinstagram} alt='Instagram' /> </li>
+                <li>
+                    <img src={logofaceboock} alt='faceboock' />
+                </li>
+                <li>
+                    <img src={logogoogle} alt='Google' />
+                </li>
+                <li>
+                    <img src={logoinstagram} alt='Instagram' />
+                </li>
             </ul>
-            <Clima/>
+            <Clima />
         </div>
-    )
+    );
 }
 
 Menu.propTypes = {
     cambiarVista: PropTypes.func.isRequired
-}
+};
 
 Encabezado.propTypes = {
     cambiarVista: PropTypes.func.isRequired
-}
+};
 
 export default Encabezado;
