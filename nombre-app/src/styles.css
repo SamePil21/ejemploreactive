@@ -5,7 +5,7 @@ body {
     color: white;
 }
 
-.encabezadoe {
+.Encabezado {
     /* 1. POSICIONAMIENTO */
     position: sticky; /* Se queda pegado arriba al bajar */
     top: 0;

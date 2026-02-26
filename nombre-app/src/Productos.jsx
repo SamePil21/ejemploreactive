@@ -4,47 +4,54 @@ import api from "./Services/axios";
 import "./Productos.css";
 
 function Productos() {
-    const [productos, setProducts] = useState([]);
+      const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const obtenerProductos = async () => {
-            try {
-                const response = await api.get("products");
-                setProducts(response.data);
-            } catch (error) {
-                console.error("Error al obtener productos:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        obtenerProductos();
-    }, []);
+    const obtenerProductos = async () => {
+      try {
+        const response = await api.get("/products");
+        setProductos(response.data);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (loading) {
-        return <p>Cargando productos...</p>;
-    }
+    obtenerProductos();
+  }, []);
+
+  if (loading) return <p>Cargando...</p>;
 
     return (
         <div>
-            <main className="classMain">
+            <main className='classMain'>
                 <header>
-                    <h1>Nuestro Catálogo</h1>
+                    <h1>Nuestro Catálogo Tecnológico</h1>
                 </header>
-
-                {productos.map((producto) => (
-                    <article className="product-card" key={producto.id}>
-                        <img src={producto.image} alt={producto.title} />
-                        <span>
-                            {producto.category}
-                        </span>
-                        <h2>{producto.title}</h2>
-                        <h3>{producto.price}</h3>
-                    </article>
-                ))}
+                <section className='classSection'>
+                    {productos.map((producto) => (
+                        <article key={producto.id} className='classArticle'>
+                            <img
+                                src={producto.image}
+                                alt={producto.title}
+                            />
+                            <span>
+                                {producto.description}
+                            </span>
+                            <h2>{producto.category}</h2>
+                            <p>
+                                {producto.price}
+                            </p>
+                            <button>
+                                Añadir al carrito
+                            </button>
+                        </article>
+                    ))}
+                </section>
             </main>
         </div>
-    );
+    )
 }
-
 export default Productos;

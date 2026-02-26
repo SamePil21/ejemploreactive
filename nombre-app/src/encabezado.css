@@ -1,0 +1,74 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.encabezadoDiv {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: rgba(76, 104, 103, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logoDiv img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 00.3s;
+}
+
+.logoDiv img:hover {
+  transform: scale(1.05);
+}
+
+.menuDiv ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menuDiv ul li {
+  background-color: #39c5bb;
+  color: white;
+  padding: 8px 18px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.menuDiv ul li:hover {
+  background-color: #ffffff;
+  color: #39c5bb;
+  transform: translateY(-2px);
+}
+
+.redesDiv ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.redesDiv img {
+  width: 28px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: opacity 0.3s;
+}
+
+.redesDiv img:hover {
+  opacity: 0.8;
+}
