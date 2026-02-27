@@ -1,15 +1,12 @@
-import Mapa from './mapa';
 import './boddysame.css';
 
-function PromosContenedor() {
+function Inicio() {
   return (
     <div className='PromoContenedor'>
-      <h2>Hola bienvenido a nuestro sitio</h2>
-      <p>Ofertas en todos los productos</p>
-
-   
+      <h2>Hola, bienvenido a nuestro sitio</h2>
+      <p>Descubre las mejores ofertas en todos nuestros productos tecnológicos.</p>
     </div>
   );
 }
 
-export default PromosContenedor;
+export default Inicio;

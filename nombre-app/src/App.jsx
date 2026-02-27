@@ -10,8 +10,7 @@ function App(){
   return (
     <div>
         <Encabezado cambiarVista={setVista} />
-        {/* CAMBIO AQUÍ: Usa <Cards /> en lugar de <Cardscode /> */}
-        <Cardscode vista={vista} /> 
+        <Cards vista={vista} /> 
         <PromosContenedor />
         <MapaGeoLocalizacion />
         <Futer />

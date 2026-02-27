@@ -1,7 +1,4 @@
 import miImagen from './assets/logo.jpg';
-import logofaceboock from './assets/faceboock.png';
-import logogoogle from './assets/Google.png';
-import logoinstagram from './assets/Instagram.png';
 import './encabezado.css';
 import PropTypes from 'prop-types';
 import Clima from './clima';
@@ -44,11 +41,7 @@ function Redes(){
     return (
         <div className='redesDiv'>
             <ul>
-                <li><a href=''><img src={facebook} alt='Logotipo'/></a></li>
-                <li><a href=''><img src={instagram} alt='Logotipo'/></a></li>
-                <li><a href=''><img src={x} alt='Logotipo'/></a></li>
-                <li><a href=''><img src={youtube} alt='Logotipo'/></a></li>
-                <li><a href=''><img src={linkedin} alt='Logotipo'/></a></li>
+           
             </ul>
             <Clima/>
         </div>
