@@ -1,0 +1,193 @@
+/* --- ESTILOS GENERALES Y FONDO --- */
+.contacto-seccion {
+    /* Aquí usamos la imagen de fondo que pediste */
+    background-image: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images8.alphacoders.com/139/1399103.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #e6f1ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contacto-header h1 {
+    font-size: 3rem;
+    color: #64ffda; /* Verde agua brillante */
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.contacto-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- ESTILOS PARA LAS SUCURSALES (Tus Cards) --- */
+.seccion-sucursales h2 {
+    text-align: center;
+    color: #ccd6f6;
+    margin-bottom: 30px;
+}
+
+.cardsDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background: rgba(17, 34, 64, 0.8);
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #ccd6f6;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #8892b0;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+/* --- ESTILOS PARA EL FORMULARIO (Moderno) --- */
+.seccion-formulario {
+    background: rgba(17, 34, 64, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.seccion-formulario h2 {
+    text-align: center;
+    color: #ccd6f6;
+    margin-bottom: 10px;
+}
+
+.pc {
+    text-align: center;
+    color: #8892b0;
+    margin-bottom: 30px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario input, 
+.formulario textarea {
+    background: #112240;
+    border: 2px solid #233554;
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+/* --- ESTILOS PARA LOS BOTONES --- */
+.btn-comprar {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4);
+}
+
+.btn-eliminar {
+    background: transparent;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn-enviar {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Mensajes de éxito y error */
+.mensaje-exito {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #64ffda;
+}

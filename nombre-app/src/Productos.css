@@ -1,0 +1,15 @@
+.classMain header {
+    display: flex;
+    justify-content: center; /* Centra-horizontalmente */
+    align-items: center;     /* Centra-verticalmente */
+    width: 100%;
+    margin-bottom: 1%;  
+    padding-inline-start:0%;
+    padding-inline-end: 0%;
+       /*-Separa el título de mis tarjetas */
+}
+
+.classMain header h1 {
+    font-size: 2.5rem;       /* Ajustar tamaño */
+    color: #d4edfe;
+}

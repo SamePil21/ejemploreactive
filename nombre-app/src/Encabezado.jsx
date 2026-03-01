@@ -1,4 +1,4 @@
-import miImagen from './assets/logo.jpg';
+import miImagen from './assets/imgcardssampil/idvlogo.png';
 import './encabezado.css';
 import PropTypes from 'prop-types';
 import Clima from './clima';

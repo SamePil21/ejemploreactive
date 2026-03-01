@@ -38,7 +38,7 @@ body {
 }
 
 .menuDiv ul li {
-  background-color: #39c5bb;
+  background-color: #3a5e5c;
   color: white;
   padding: 8px 18px;
   font-weight: bold;
@@ -50,8 +50,8 @@ body {
 }
 
 .menuDiv ul li:hover {
-  background-color: #ffffff;
-  color: #39c5bb;
+  background-color: #2c3d3a;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 

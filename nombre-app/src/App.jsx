@@ -12,7 +12,6 @@ function App(){
         <Encabezado cambiarVista={setVista} />
         <Cards vista={vista} /> 
         <PromosContenedor />
-        <MapaGeoLocalizacion />
         <Futer />
     </div>
   );
