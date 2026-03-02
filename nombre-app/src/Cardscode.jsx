@@ -7,6 +7,7 @@ import Galeria from "./Galeria";
 import Productos from './Productos';
 import AcercaDe from "./AcercaDe";
 import Contacto from "./Contacto";
+import Carrito from "./Carrito";
 
 
 function ContenedorCards({ vista }) {
@@ -18,6 +19,7 @@ function ContenedorCards({ vista }) {
         Sucursales: <Sucursales />,
         Usuarios: <Usuarios/>,
         Contacto: <Contacto />,
+        Carrito: <Carrito />,
     };
 
     return (

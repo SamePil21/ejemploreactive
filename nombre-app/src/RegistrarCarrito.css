@@ -1,0 +1,94 @@
+/* Contenedor principal del formulario de carrito */
+.registrar-carrito-container {
+    background: rgba(10, 25, 47, 0.9); /* Azul profundo translúcido */
+    backdrop-filter: blur(10px);
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.2); /* Borde verde agua sutil */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.registrar-carrito-container:hover {
+    transform: translateY(-5px);
+}
+
+.registrar-carrito-container h1 {
+    color: #64ffda; /* Verde agua neón */
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+/* Estilo del formulario */
+.registrar-carrito-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.registrar-carrito-form label {
+    width: 100%;
+}
+
+/* Estilo de los inputs */
+.registrar-carrito-form input {
+    width: 100%;
+    padding: 12px 15px;
+    background: #112240;
+    border: 1px solid #233554;
+    border-radius: 10px;
+    color: #ccd6f6;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.registrar-carrito-form input:focus {
+    border-color: #64ffda;
+    background: #1a3060;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+.registrar-carrito-form input::placeholder {
+    color: #8892b0;
+    opacity: 0.6;
+}
+
+/* Quitar flechas del input number */
+.registrar-carrito-form input::-webkit-inner-spin-button,
+.registrar-carrito-form input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Botón de envío */
+.registrar-carrito-form button {
+    background: transparent;
+    color: #64ffda;
+    border: 2px solid #64ffda;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+.registrar-carrito-form button:hover {
+    background: rgba(100, 255, 218, 0.1);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+    transform: scale(1.02);
+}
+
+.registrar-carrito-form button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,100 @@
+/* Contenedor principal del carrito */
+.carrito-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(10, 25, 47, 0.7); /* Azul profundo traslúcido */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.carrito-header h1 {
+    color: #64ffda; /* Verde agua neón */
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+}
+
+/* Tarjetas de productos en el carrito */
+.carritoCard {
+    background: #112240;
+    border: 1px solid #233554;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carritoCard:hover {
+    transform: translateY(-10px);
+    border-color: #64ffda;
+    box-shadow: 0 15px 30px rgba(100, 255, 218, 0.15);
+}
+
+.carritoCard img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Para que la imagen no se deforme */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background: white; /* Fondo blanco para resaltar el producto */
+    padding: 10px;
+}
+
+.carritoCard h2 {
+    color: #ccd6f6;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    height: 50px; /* Altura fija para alinear títulos */
+    overflow: hidden;
+}
+
+.carritoCard p {
+    color: #8892b0;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.carritoCard h3 {
+    color: #64ffda;
+    margin: 15px 0;
+    font-size: 1.4rem;
+}
+
+/* Botón eliminar estilo neón rojo */
+.btn-eliminar {
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background: #ff4d4d;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Mensaje de carrito vacío */
+p {
+    text-align: center;
+    color: #8892b0;
+    font-size: 1.2rem;
+    grid-column: 1 / -1; /* Centra el texto en el grid */
+}

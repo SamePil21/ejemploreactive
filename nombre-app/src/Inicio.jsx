@@ -47,10 +47,7 @@ function Inicio() {
             <img src={item.imagen} alt={item.titulo} />
             <h1>{item.titulo}</h1>
             <p>{item.descripcion}</p>
-            {/* Agregué el botón para que use tu estilo de CSS */}
-            <a href={item.link} className="btn-comprar" style={{textDecoration: 'none', display: 'inline-block', marginBottom: '20px'}}>
-                Ver más
-            </a>
+            
           </article>
         ))}
       </div>
