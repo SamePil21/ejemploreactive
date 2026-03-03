@@ -6,9 +6,9 @@ import RegistrarUsuario from './RegistrarUsuario';
 function Usuarios(){
     const [usuarios, setUsuarios] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [usuarioSeleccionado, setUsuarioSeleccionado] = useState(null);
     
-    useEffect(() => {
-        const obtenerUsuarios = async () => {
+         const obtenerUsuarios = async () => {
             try {
                 const response = await api.get("/users");
                 setUsuarios(response.data);
@@ -18,17 +18,30 @@ function Usuarios(){
                 setLoading(false);
             }
         };
+
+    useEffect(() => {
+
         obtenerUsuarios();
     }, []);
 
     if (loading) return <p>Cargando...</p>;
+//agregar boton de actualizar tarea apra tambien eliminar caracter :89
 
     return (
         <div>
-            <header className='usuarios-header'>
-                <h1>Usuarios</h1>
+            <RegistrarUsuario 
+            usuarioEditando={usuarioSeleccionado}
+            limpiarSeleccion={() => setUsuarioSeleccionado(null)}
+            onActualizacionExitosa={obtenerUsuarios}
+            />
+            <header>
+                <h1>Usuarios Registrados</h1>
             </header>
+            <section className='classSection'>
+                <table >
 
+                </table>
+            </section>
             <RegistrarUsuario />
 
             <main className='usuarios-container'>
