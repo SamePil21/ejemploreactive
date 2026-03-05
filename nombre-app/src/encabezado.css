@@ -55,20 +55,32 @@ body {
   transform: translateY(-2px);
 }
 
-.redesDiv ul {
+.LoguinDiv ul {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 0;
 }
 
-.redesDiv img {
-  width: 28px;
-  height: auto;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-  transition: opacity 0.3s;
+.LoguinDiv ul li {
+  background: #477e8b;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  user-select: none;
 }
 
-.redesDiv img:hover {
-  opacity: 0.8;
+/* Hover */
+.LoguinDiv ul li:hover {
+  background: #5ca0ac;
+  transform: translateY(-2px);
+}
+
+/* Click */
+.LoguinDiv ul li:active {
+  transform: scale(0.95);
 }

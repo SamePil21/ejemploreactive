@@ -2,15 +2,17 @@ import { useState } from "react";
 import Encabezado from "./Encabezado";
 import Futer from "./futer";
 import PromosContenedor from "./boddy";
-import MapaGeoLocalizacion from "./mapalocalizacion";
 import Cards from "./Cardscode";
+import { AuthProvider } from "./AuthContext";
 
 function App(){
   const [vista, setVista] = useState("Inicio");
   return (
     <div>
-        <Encabezado cambiarVista={setVista} />
+       <AuthProvider>
+         <Encabezado cambiarVista={setVista} />
         <Cards vista={vista} /> 
+       </AuthProvider>
         <PromosContenedor />
         <Futer />
     </div>

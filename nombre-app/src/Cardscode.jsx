@@ -8,6 +8,7 @@ import Productos from './Productos';
 import AcercaDe from "./AcercaDe";
 import Contacto from "./Contacto";
 import Carrito from "./Carrito";
+import Login from "./Login";
 
 
 function ContenedorCards({ vista }) {
@@ -20,9 +21,12 @@ function ContenedorCards({ vista }) {
         Usuarios: <Usuarios/>,
         Contacto: <Contacto />,
         Carrito: <Carrito />,
+        Login: <Login/>,
+
     };
 
-    return (
+
+    return (    
         <div>
             {vistas[vista] || <Inicio />}
         </div>
