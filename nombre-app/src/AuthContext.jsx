@@ -1,22 +1,27 @@
 import { createContext, useState, useContext } from "react";
 import PropTypes from 'prop-types'; // <--- PASO 1
+import Login from "./Login";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
 
-    const login = () => setIsLoggedIn(true);
-    const logout = () => setIsLoggedIn(false);
-
+    const login = (token) => {
+        localStorage.setItem('token', token);
+        setIsLoggedIn(true);
+    };
+    const logout = () => {
+        localStorage.removeItem('token');
+        setIsLoggedIn(false);
+    };
     return (
-        <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
-            {children}
+        </AuthContext.Provider value={{ isLoggedIn, Login, logout}}>
+        {children}
         </AuthContext.Provider>
     );
-};
-
-// <--- PASO 2: Esto quita el error de "missing props validation"
+    export useContext = useContext{AuthContext};
+     
 AuthProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };

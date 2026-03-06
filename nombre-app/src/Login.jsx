@@ -1,29 +1,38 @@
+import React, {useState} from 'react';
+import api from "./Services/Api";
 import "./Login.css";
-import { useState } from "react";
+import { useAuth } from "./AuthContext";
 
-function Login() {
+const Login = () => {
+  const { Login } = useAuth();
 
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
 
-  const manejarLogin = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if(usuario === "admin" && password === "1234"){
-      alert("Login correcto ");
-    }else{
-      alert("Usuario o contraseña incorrectos ");
+  const credenciales = { username: usuario, password };
+    try{
+      const respuesta = await api.post('/Login', credenciales);
+      if( respuesta.data.token){
+        Login(respuesta.data.token);
+        alert('Autentificcacion autorizada');
+      }else{
+        alert('Credenciales invalidas');
+      }
+    }catch (error){
+      alert('Error', error);
+      console.error("Error:", error);
     }
   };
   
   return (
     
     <div className="login-container">
-        
-
-      <h2>Iniciar Sesión</h2>
-
-      <form onSubmit={manejarLogin}>
+    <div className="login-card"></div> 
+      <h2>Bienvenido</h2>
+      <form onSubmit={handleSubmit}>
+        className
         <input
           type="text"
           placeholder="Usuario"
