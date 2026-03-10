@@ -9,6 +9,7 @@ import AcercaDe from "./AcercaDe";
 import Contacto from "./Contacto";
 import Carrito from "./Carrito";
 import Login from "./Login";
+import Categorias from './Categorias';
 
 
 function ContenedorCards({ vista }) {
@@ -22,6 +23,7 @@ function ContenedorCards({ vista }) {
         Contacto: <Contacto />,
         Carrito: <Carrito />,
         Login: <Login/>,
+        Categorias: <Categorias/>,
 
     };
 

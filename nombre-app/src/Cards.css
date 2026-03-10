@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 30px;
     padding: 80px 40px 40px 40px; /* Un poco más de padding arriba para que no se pegue al iniciar */
-
+    
     position: relative; /* Normal, no sticky */
     z-index: 1; /* Nivel 1 (El encabezado tiene 100, así que el encabezado gana) */
     

@@ -23,7 +23,9 @@ function Logotipo() {
 }
 
 function Menu({ cambiarVista }) {
-    const {isLoggedIn} = useAuth;
+
+    const { isLoggedIn, logout } = useAuth();
+
     return (
         <div className='menuDiv'>
             <ul>
@@ -33,17 +35,20 @@ function Menu({ cambiarVista }) {
                 <li onClick={() => cambiarVista("Galeria")}>Galeria</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
                 <li onClick={() => cambiarVista("Contacto")}>Contacto</li>
+
                 {isLoggedIn ? (
-                 <>
-              <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
-               <li onClick={() => cambiarVista("Carrito")}>Carrito</li>
-               <li>Cerrar Sesión</li>
-                 </>
+                    <>
+                        <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
+                        <li onClick={() => cambiarVista("Carrito")}>Carrito</li>
+                        <li onClick={() => cambiarVista("Categorias")}>Categorias</li>
+                        <li onClick={logout}>Cerrar Sesión</li>
+                    </>
                 ) : (
-                <li onClick={() => cambiarVista("Login")}>Login</li>
-                )}  
-                 </ul>
-           </div>
+                    <li onClick={() => cambiarVista("Login")}>Login</li>
+                )}
+
+            </ul>
+        </div>
     )
 }
 

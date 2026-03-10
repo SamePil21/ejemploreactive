@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import api from "./Services/api"; // Ruta corregida
+import api from "./Services/api"; 
 import "./Productos.css";
 import RegistrarProducto from "./RegistrarProducto";
 function Productos() {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true); // <-- AGREGA ESTA LÍNEA EXACTAMENTE ASÍ
+  const [loading, setLoading] = useState(true); 
 
   const obtenerProductos = async () => {
     try {
@@ -13,7 +13,7 @@ function Productos() {
     } catch (error) {
       console.error("Error al cargar productos:", error);
     } finally {
-      setLoading(false); // Ahora sí existe la función
+      setLoading(false); 
     }
   };
 
